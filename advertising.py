@@ -1,3 +1,4 @@
+%%writefile advertising.py
 import streamlit as st
 import pandas as pd
 import pickle
@@ -11,12 +12,12 @@ This app predicts the **Advertising Sales** based on TV, Newspaper and Radio exp
 st.sidebar.header('User Input Parameters')
 
 def user_input_features():
-    tv = st.sidebar.slider('TV', 0.70, 300.0, 150.0)
-    radio = st.sidebar.slider('Radio', 0, 50.0, 25.0)
-    newspaper = st.sidebar.slider('Newspaper', 0.3, 115.0, 70.0)
-    data = {'TV': tv,
-            'Radio': radio,
-            'Newspaper': newspaper}
+    TV = st.sidebar.slider('TV', 0.70, 300, 150)
+    Radio = st.sidebar.slider('Radio', 0, 50, 25)
+    Newspaper = st.sidebar.slider('Newspaper', 0.3, 115, 70)
+    data = {'TV': TV,
+            'Radio': Radio,
+            'Newspaper': Newspaper}
     features = pd.DataFrame(data, index=[0])
     return features
 
